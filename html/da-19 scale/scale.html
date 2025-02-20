@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            background-image: url("https://wscubetech.co/Assignments/furniture/storage/app/public/uploads/images/home-page/0d588bec-d9a0-4645-8e7a-b49ef67b34be-1670180400.webp");
+            background-size: cover;
+            background-position: 100% 0%;
+            margin: 50px 0px;
+            transition: 1s;
+            /* border-radius: 50%; */
+
+        }
+        .innerDiv{
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            transform: scaleY(0);
+            transition: 1s;
+            transform-origin: top ;
+            /* border-radius: 50%; */
+        }
+        .box:hover .innerDiv{
+            transform: scaleY(1);
+        }
+
+        .box:hover{
+            /* transform: rotateY(100deg); */
+            /* transform: skewY(-25deg); */
+            transform: translate(1000px , 0px ) rotate(360deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <!-- <div class="innerDiv">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit doloribus quos minus enim non ducimus autem sequi dolore obcaecati, omnis ea culpa nostrum dignissimos ab dicta? Dolores officia cumque laborum!
+        </div> -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,168 @@
+* {
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+}
+
+.row-1 {
+    width: 980px;
+    background-color: #343130;
+    margin: auto;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.row-1-left {
+    /* width: 50%; */
+    background-color: #343130;
+    display: flex;
+}
+
+.row-2-right {
+    /* width: 50%; */
+    background-color: #343130;
+    text-align: right;
+    display: flex;
+}
+
+.row-1-left h3 {
+    margin-left: 10px;
+}
+
+.row-2-right img {
+    margin-right: 10px;
+}
+
+.row-2 {
+    width: 1000px;
+    /* border: 2px solid red; */
+    margin: auto;
+    display: flex;
+}
+
+.logo {
+    width: 25%;
+    /* border: 1px solid red; */
+}
+
+.menu {
+    width: 75%;
+    display: flex;
+    align-items: end;
+    justify-content: space-evenly;
+    /* border: 1px solid red; */
+}
+
+.menuInner {
+    font-size: 22px;
+    /* border: 1px solid red; */
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.menuInner:hover {
+    color: skyblue;
+    border-bottom: 2px solid skyblue;
+}
+
+/* start row-3 */
+
+.row-3 {
+    width: 1000px;
+    margin: auto;
+    border: 2px solid red;
+    display: flex;
+    margin-bottom: 200px;
+}
+
+.row-3-leftside {
+    width: 30%;
+    border: 2px solid;
+}
+
+.row-3-rightside {
+    width: 70%;
+    border: 2px solid blue;
+}
+
+.row-3-rightside .top {
+    width: 100%;
+}
+
+.row-3-rightside .top img {
+    width: 100%;
+}
+
+.row-3-leftside .top {
+    width: 100%;
+    background-color: skyblue;
+    height: 200px;
+}
+
+
+.row-3-rightside .middle {
+    width: 100%;
+    display: flex;
+}
+
+.row-3-rightside .middle .left {
+    width: 10%;
+    background-color: #ccc;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.row-3-rightside .middle .right {
+    width: 90%;
+    height: 7px;
+    background-color: #ccc;
+}
+
+.row-3-rightside .bottom {
+    width: 100%;
+
+   
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.innerBoxDiv {
+    width: 48%;
+    margin: 1%;
+    /* border: 2px solid; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.innerBoxDiv .left {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    background-color: orangered;
+    border-radius: 50%;
+}
+
+.innerBoxDiv .left img {
+
+    margin-top: 4px;
+}
+
+.innerBoxDiv .right {
+    width: 70%;
+    /* border: 2px solid red; */
+color: orangered;
+}
+
+
+.dark-blue{
+    background-color: #5E5DA4 !important ;
+
+}
+.dark-blue-text{
+    color: #5E5DA4 !important;
+}

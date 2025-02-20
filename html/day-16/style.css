@@ -1,0 +1,50 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.header{
+    width: 100%;
+    background-color: #ccc;
+    padding: 10px;
+}
+.header>ul{
+    display: flex;
+    justify-content: space-evenly;
+}
+.header>ul>li{
+    position: relative;
+}
+.homeMenu{
+    width: 100px;
+    background-color: aquamarine;
+    position: absolute;
+    top: 151%;
+    left: -200%;
+    padding: 10px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 1s;
+}
+
+.header>ul>li:hover .homeMenu{
+    visibility: visible;
+    opacity: 1;
+    left: 0%;
+}
+
+.secHomeMenu{
+    background-color: green;
+    position: absolute;
+    top: 13%;
+    left: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: 1s;
+}
+
+.homeMenu>li:hover .secHomeMenu{
+    opacity: 1;
+    visibility: visible;
+}

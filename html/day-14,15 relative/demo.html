@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            box-sizing: border-box;
+        }
+
+        .header {
+            width: 100%;
+            border: 2px solid red;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+            position: relative;
+            /* z-index: 9999999 !important; */
+        }
+
+        .header .left {
+            width: 40%;
+
+
+            display: flex;
+            align-items: center;
+        }
+
+        .header .right {
+            width: 40%;
+
+
+        }
+
+        .logo {
+            width: 20%;
+        }
+
+        .logo img {
+            width: 100%;
+        }
+
+        .menu>ul {
+            display: flex;
+        }
+
+        .menu>ul>li {
+            padding: 0px 15px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .myInput {
+            width: 50%;
+            padding: 15px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .myInput input {
+            margin-left: 8px;
+            border: none;
+            outline: none;
+            display: block;
+        }
+
+        .myInput i {
+            display: block;
+        }
+
+        .subMenu {
+            width: 1100px;
+            height: 300px;
+            background-color: skyblue;
+            position: absolute;
+            top: 102%;
+            left: 3%;
+            display: flex !important;
+           opacity: 0;
+           visibility: hidden;
+           transition: 1s;
+           /* z-index: -999 !important; */
+        }
+        .subMenu .box{
+            width: 20%;
+           
+        }
+
+        .menu>ul>li:hover .subMenu{
+            
+            opacity: 1;
+            visibility: visible;
+            
+        }
+        /* banner */
+        .banner{
+            width: 90%;
+            margin: auto;
+            /* border: 2px solid red; */
+            display: flex;
+
+        }
+        .bannerBox{
+            width: 50%;
+        }
+        .bannerBox img{
+            width: 100%;
+            /* border: 1px solid red; */
+        }
+        .offDiv{
+            width: 90%;
+            margin: auto;
+            display: flex;
+        }
+        .offDiv img{
+            width: 50%;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="left">
+            <div class="logo">
+                <img src="https://images.indianexpress.com/2021/01/myntra.png" alt="">
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li>Men
+                        <div class="subMenu">
+                            <div class="box">
+                                <b>topwear </b>
+                                <ul>
+                                    <li>t-shirt</li>
+                                    <li>t-shirt</li>
+                                    <li>t-shirt</li>
+                                    <li>t-shirt</li>
+                                    <li>t-shirt</li>
+                                    <li>t-shirt</li>
+                                    <li>t-shirt</li>
+                                </ul>
+                            </div>
+                            <div class="box">
+                                <b>topwear </b>
+                                <ul>
+                                    <li>t-shirt</li>
+                                    <li>t-shirt</li>
+                                    <li>t-shirt</li>
+                                    <li>t-shirt</li>
+                                    <li>t-shirt</li>
+                                    <li>t-shirt</li>
+                                    <li>t-shirt</li>
+                                </ul>
+                            </div>
+                            <div class="box">
+                                <b>topwear </b>
+                                <ul>
+                                    <li>t-shirt</li>
+                                    <li>t-shirt</li>
+                                    <li>t-shirt</li>
+                                    <li>t-shirt</li>
+                                    <li>t-shirt</li>
+                                    <li>t-shirt</li>
+                                    <li>t-shirt</li>
+                                </ul>
+                            </div>
+                            <div class="box">
+                                <b>topwear </b>
+                                <ul>
+                                    <li>t-shirt</li>
+                                    <li>t-shirt</li>
+                                    <li>t-shirt</li>
+                                    <li>t-shirt</li>
+                                    <li>t-shirt</li>
+                                    <li>t-shirt</li>
+                                    <li>t-shirt</li>
+                                </ul>
+                            </div>
+                            <div class="box">
+                                <b>topwear </b>
+                                <ul>
+                                    <li>t-shirt</li>
+                                    <li>t-shirt</li>
+                                    <li>t-shirt</li>
+                                    <li>t-shirt</li>
+                                    <li>t-shirt</li>
+                                    <li>t-shirt</li>
+                                    <li>t-shirt</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>Women
+                        <div class="subMenu">
+                            <div class="box">
+                                <b>topwear </b>
+                                <ul>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                </ul>
+                            </div>
+                            <div class="box">
+                                <b>topwear </b>
+                                <ul>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                </ul>
+                            </div>
+                            <div class="box">
+                                <b>topwear </b>
+                                <ul>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                </ul>
+                            </div>
+                            <div class="box">
+                                <b>topwear </b>
+                                <ul>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                </ul>
+                            </div>
+                            <div class="box">
+                                <b>topwear </b>
+                                <ul>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>Men</li>
+                    <li>Women</li>
+                    <li>Men</li>
+                    <li>Women 
+                        <div class="subMenu">
+                            <div class="box">
+                                <b>topwear </b>
+                                <ul>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                </ul>
+                            </div>
+                            <div class="box">
+                                <b>topwear </b>
+                                <ul>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                </ul>
+                            </div>
+                            <div class="box">
+                                <b>topwear </b>
+                                <ul>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                </ul>
+                            </div>
+                            <div class="box">
+                                <b>topwear </b>
+                                <ul>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                </ul>
+                            </div>
+                            <div class="box">
+                                <b>topwear </b>
+                                <ul>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                    <li> girl  shoes </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+
+        <div class="right">
+
+            <div class="myInput">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="search here.....">
+            </div>
+
+        </div>
+    </div>
+
+    <!--  -->
+    <div class="banner">
+        <div class="bannerBox">
+            <img src="https://assets.myntassets.com/f_webp,w_490,c_limit,fl_progressive,dpr_2.0/assets/images/2025/FEBRUARY/5/EejeqL04_bc9ecdab6ab84a3baeb6a7f6fd34ec24.jpg" alt="">
+        </div>
+
+        <div class="bannerBox">
+            <img src="https://assets.myntassets.com/f_webp,w_490,c_limit,fl_progressive,dpr_2.0/assets/images/2025/FEBRUARY/5/4XvfSUN9_81c2d1f8addb44afa12c76e73cfc189d.jpg" alt="">
+        </div>
+
+        
+    </div>
+
+
+    <!-- .offDiv -->
+     <div class="offDiv">
+        <img src="https://assets.myntassets.com/f_webp,w_490,c_limit,fl_progressive,dpr_2.0/assets/images/2025/FEBRUARY/6/qlzKSYj0_d0956f5f169a43e1878424c2383854d8.jpg" alt="">
+
+        <img src="https://assets.myntassets.com/f_webp,w_490,c_limit,fl_progressive,dpr_2.0/assets/images/2025/FEBRUARY/6/LNhZuFuk_44e5f2685cc94c148a887e11320878fc.jpg" alt="">
+     </div>
+</body>
+
+</html>
