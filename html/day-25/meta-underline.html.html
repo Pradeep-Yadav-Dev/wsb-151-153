@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 80px;
+            margin: 50px auto;
+            font-size: 22px;
+            position: relative;
+        }
+
+        .box::after {
+            content: "";
+            position: absolute;
+            top: 30px;
+            right: 0px;
+            width: 0%;
+            border-bottom: 2px solid blue;
+            transition: 1s;
+
+        }
+
+        .box:hover::after {
+            left: 0px;
+            width: 100%;
+        }
+
+        .box::before {
+            content: ">";
+            position: absolute;
+            top: 13%;
+            left: 95%;
+            transform: rotate(90deg);
+            transition: 1s;
+        }
+        .box:hover::before{
+            transform: rotate(-90deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box"> pradeep </div>
+
+</body>
+
+</html>
