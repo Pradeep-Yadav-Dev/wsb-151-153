@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    // let x=[11,22,33,44,55,66,77,88]
+
+    // console.log(x)
+    // // x.shift()
+    // // x.unshift("ws")
+
+    // // console.log(x.slice(2,12))
+    // //////////////////////////////////////////////////////
+    // // console.log(x.splice(2,1))
+
+    // ////////////////////////////////////////////////////
+
+
+    // // console.log(x.splice(2,1,"ws","pp"))
+    // ///////////////////////////////////////////////////////////
+
+    // console.log(x)
+
+
+    ////////////////////////////////////////////////////////////////////////
+
+    // let a=22.88
+
+    // // console.log(Math.round(a))
+    // console.log(Math.ceil(a))
+    // console.log(Math.floor(a))
+
+    ///////////////////////////////////////////////////////////////////////////
+
+    // let x=[11,22,33,44]
+    // console.log(typeof(x))
+    // console.log(typeof(x.join()))
+    // console.log(x.join("/"))
+    ////////////////////////////////////////////////////////////////
+
+    // let a="22"
+    // let b="33"
+
+    // console.log(Array.of(a,b))
+
+    ///////////////////////////////////////////////////////////////
+
+    // let x=["ws",22,33,44,[33,44,55,[66,77,88,["ws","pp",[55,99]]]]]
+    // console.log(x.flat())
+
+    ///////////////////////////////////////////////////////////////
+    let myArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, -88, 77, 0, -3,99]
+
+    // for(let i of myArr){
+    //     console.log(i,myArr)
+    // }
+
+    // for(let i in myArr){
+    //     console.log(myArr[i])
+    // }
+
+    let maxValue = -Infinity
+    let secMaxValue=-Infinity
+
+    for (let v of myArr) {
+        if (maxValue < v) {
+            maxValue = v
+        }
+    }
+
+    for (let p of myArr) {
+        console.log(p)
+        if(secMaxValue < p && secMaxValue<maxValue ){
+            secMaxValue=p
+        }
+    }
+
+    console.log(secMaxValue)
+
+
+
+    
+
+
+
+
+</script>
+
+</html>
