@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            font-size: 25px;
+            background-color: #ccc;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <p id="firstP" > welcome to ws jodhpur 1 </p>
+    <p class="secondP" > welcome to ws jodhpur 21 </p>
+    <p class="secondP" > welcome to ws jodhpur 22 </p>
+    <p class="secondP" > welcome to ws jodhpur 23 </p>
+    <p class="secondP" > welcome to ws jodhpur 24 </p>
+
+    <h2>hello jodhpur</h2>
+    <h2>hello jodhpur</h2>
+    <h2>hello jodhpur</h2>
+
+    <div class="main">
+        <h2>hello jaipur</h2>
+        <h1>heading</h1>
+    </div>
+
+    <div class="menu">
+        <ul>
+            <li> <h2>home</h2> </li>
+            <li>about</li>
+        </ul>
+    </div>
+
+
+    <div class="box"></div>
+
+</body>
+
+<script>
+
+    let box=document.querySelector(".box")
+    console.log(box)
+
+    box.innerText="pradeep"
+     box.innerHTML="<h1>ws </h1>"
+
+
+////////////////////////////////////////////////////////////
+
+    let myPtag=document.querySelector("#firstP")
+    let allPTag=document.querySelectorAll(".secondP")
+    let myh2tag=document.querySelectorAll("h2")
+    let userData=document.querySelector(".main h1")
+
+    let menyLi=document.querySelector(".menu ul li:nth-child(1)")
+    // console.log(allPTag[2].innerText)
+
+    // console.log(myh2tag[2])
+
+    console.log(menyLi.innerText)
+    console.log(menyLi.innerHTML)
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////
+
+//    let firstP=document.getElementById("firstP")
+//    let ws=document.getElementsByClassName("secondP")
+//    let myH2=document.getElementsByTagName("h2")
+
+
+//    console.log(firstP.innerText)
+//    console.log(ws[3])
+//    console.log(ws[2].innerText)
+
+// console.log(myH2)
+
+
+
+</script>
+</html>

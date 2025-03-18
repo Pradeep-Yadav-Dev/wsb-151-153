@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 300px;
+            padding: 10px;
+            height: 200px;
+            border: 2px solid red ;
+            margin: auto;
+            transition: 1s;
+        }
+
+        .bgClass{
+            background-color: #ccc;
+            color: red;
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+      
+    </div>
+    <button onclick="addClass()"> add </button>
+    <button onclick="removeClass()"> remove </button>
+    <button onclick="toggleClass()"> toggle </button>
+</body>
+
+<script>
+    let box=document.querySelector(".box")
+
+
+    let addClass=()=>{
+        box.innerHTML="hello class";
+        box.classList.add("bgClass")
+    }
+
+    function removeClass(){
+        box.innerHTML="";
+        box.classList.remove("bgClass")
+    }
+
+    let toggleClass=function(){
+        box.classList.toggle("bgClass")
+    }
+
+</script>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 500px;
+            height: 200px;
+            background-color: red;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    
+    <button onclick="myClickFn()" > single Click  </button>
+
+    <button ondblclick="myClickFnDB()" >double Click me</button>
+
+    <!-- <div class="box" onmouseenter="hoverFn()" ></div> -->
+
+    <form onsubmit="userForm()">
+        <input type="text" placeholder="name">
+        <input type="text" placeholder="name">
+        <input type="text" placeholder="name">
+        <input type="text" placeholder="name">
+        <input type="text" placeholder="name">
+        <button >save</button>
+    </form>
+    
+
+</body>
+
+<script>
+
+let myClickFn=()=>{
+    alert("hello class")
+}
+
+
+function myClickFnDB(){
+    console.log("happy holi")
+}
+
+let hoverFn=function(){
+    alert(2+2)
+}
+
+let userForm=()=>{
+    alert("save")
+}
+
+window.onload(alert("pppp"))
+
+</script>
+</html>
