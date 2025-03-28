@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <button onclick="showPassword()" id="btn" > show </button>
+    <input type="text" id="myInput"  / >
+
+</body>
+
+<script>
+
+let myInput=document.getElementById("myInput")
+let btn=document.getElementById("btn")
+
+// let showPassword=()=>{
+//     if(myInput.type=="text"){
+//         myInput.type="password";
+//         btn.innerHTML="show"
+//     }
+//     else{
+//         myInput.type="text";
+//         btn.innerHTML="hide"
+//     }
+// }
+
+let showPassword=()=>{
+    if( btn.innerHTML=="show"){
+        myInput.type="password";
+        btn.innerHTML="hide"
+    }
+    else{
+        myInput.type="text";
+        btn.innerHTML="show"
+    }
+}
+
+</script>
+</html>

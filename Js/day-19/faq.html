@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            /* background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+            height: 100vh; */
+        }
+
+        .main {
+            max-width: 800px;
+            /* border: 2px solid red; */
+            margin: 40px auto;
+        }
+
+        .box {
+
+            margin: 5px 0px;
+        }
+
+        .box h2 {
+            background-color: #fad0c4;
+            padding: 10px 5px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .box p {
+            /* background-color: #ccc; */
+            display: none;
+
+        }
+
+        .box i {
+            position: absolute;
+            right: 20px;
+        }
+
+        .active {
+            display: block !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="box">
+            <h2>1.Which is the best institute for CLAT in Jodhpu? <i class="fa-solid fa-plus"></i> </h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni in reprehenderit rerum ex, quos Nesciunt
+                pariatur itaque inventore laudantium commodi eaque nam!</p>
+        </div>
+
+        <div class="box">
+            <h2>2.Which is the best institute for CLAT in Jodhpu? <i class="fa-solid fa-plus"></i> </h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni in reprehenderit rerum ex, quos Nesciunt
+                pariatur itaque inventore laudantium commodi eaque nam!</p>
+        </div>
+
+        <div class="box">
+            <h2>3.Which is the best institute for CLAT in Jodhpu? <i class="fa-solid fa-plus"></i> </h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni in reprehenderit rerum ex, quos Nesciunt
+                pariatur itaque inventore laudantium commodi eaque nam!</p>
+        </div>
+
+
+        <div class="box">
+            <h2>4.Which is the best institute for CLAT in Jodhpu? <i class="fa-solid fa-plus"></i> </h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni in reprehenderit rerum ex, quos Nesciunt
+                pariatur itaque inventore laudantium commodi eaque nam!</p>
+        </div>
+    </div>
+
+    <!-- fa-minus -->
+</body>
+
+<script>
+    let allbox = document.querySelectorAll(".box h2")
+
+    allbox.forEach((v, i) => {
+        v.addEventListener("click", () => {
+
+            allbox.forEach((itme, index) => {
+                if (i !== index) {
+                    itme.nextElementSibling.classList.remove("active")
+                    itme.children[0].classList.add("fa-plus")
+                    itme.children[0].classList.remove("fa-minus")
+                }
+            })
+
+            v.nextElementSibling.classList.toggle("active")
+            v.children[0].classList.toggle("fa-plus")
+            v.children[0].classList.toggle("fa-minus")
+        })
+    })
+</script>
+
+</html>

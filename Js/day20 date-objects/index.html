@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            width: 180px;
+            border: 2px solid red;
+            padding: 10px;
+            display: flex;
+            justify-content: space-evenly;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h2 >4 : </h2>
+        <h2>50 : </h2>
+        <h2>26: </h2>
+        <h2>PM </h2>
+    </div>
+</body>
+<script>
+
+    let allH2=document.querySelectorAll("h2")
+    let myDate=new Date()
+
+    // console.log(myDate.getFullYear())
+    // console.log(myDate.getMonth())
+    // console.log(myDate.getDate())
+    // console.log(myDate.getHours())
+    // console.log(myDate.getMinutes())
+    // console.log(myDate.getSeconds())
+    // console.log(myDate.getMilliseconds())
+    // console.log(myDate.getTime())
+    // console.log(myDate.getDay())
+    let myHours=myDate.getHours()
+    let myMinuts=myDate.getMinutes()
+    let mySeconds=myDate.getSeconds()
+
+
+    let newHours;
+    if(myHours>12){
+        
+        newHours=myHours-12
+        allH2[0].innerHTML=newHours
+    }
+   
+    allH2[1].innerHTML=`: ${myMinuts}`
+    
+
+    allH2[2].innerHTML=`: ${mySeconds}`
+
+    if(myHours>12){
+        allH2[3].innerHTML=": PM"
+    }
+    else{
+          allH2[3].innerHTML=": AM"
+    }
+
+
+
+</script>
+</html>

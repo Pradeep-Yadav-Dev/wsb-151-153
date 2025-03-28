@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2> hello class 1 </h2>
+        <p>hello 1</p>
+    </div>
+    <div class="box">
+        <h2> hello class 2 </h2>
+    </div>
+    <div class="box">
+        <h2> hello class 3 </h2>
+    </div>
+    ws
+    <div class="box">
+        <h2> hello class 4 </h2>
+    </div>
+    pradeep
+</body>
+<script>
+
+let allBox=document.querySelectorAll(".box")
+
+allBox.forEach((v,i)=>{
+    v.addEventListener("click",()=>{
+        // console.log(v.children[0].innerHTML )
+        console.log(v.childNodes)
+        
+    })
+})
+
+
+
+
+
+</script>
+</html>

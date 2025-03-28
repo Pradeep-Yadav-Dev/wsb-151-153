@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .modal{
+            width: 500px;
+            height: 300px;
+            background-color: skyblue;
+            position: absolute;
+            top: -100%;
+            left: 30%;
+            transition: 1s;
+        }
+        .active{
+            top: 30% !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="modal "> <h2> form </h2> </div>
+
+
+    <button onclick="stop()" > stop </button>
+</body>
+<script>
+    let modal=document.querySelector(".modal")
+
+
+    let show=setTimeout(()=>{
+        modal.classList.add("active") 
+
+    },2000)
+
+
+    let stop=()=>{
+        clearTimeout(show)
+    }
+
+
+</script>
+</html>

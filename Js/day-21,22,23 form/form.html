@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main {
+            width: 1000px;
+            margin: auto;
+            box-shadow: 0px 0px 10px 3px #ccc;
+            padding: 10px;
+        }
+
+        .myInput {
+            width: 90%;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .row {
+            width: 100%;
+        }
+
+        form button {
+            padding: 20px 25px;
+            outline: none;
+            border: none;
+            background-color: #ccc;
+            font-size: 18px;
+            margin-left: 300px;
+        }
+
+        p {
+            color: red;
+            font-size: 14px;
+        }
+        table{
+            width: 100%;
+        }
+        table td{
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <form onsubmit="userInfo(event)">
+            <input type="text" placeholder="please enter your name" class="myInput" name="Uname">
+            <p id="nameError"></p>
+            <input type="text" placeholder="please enter your email" class="myInput" name="Uemail">
+            <input type="text" placeholder="please enter your mobile number" class="myInput" name="Unumber">
+            <p id="numberError"></p>
+            <input type="text" placeholder="please enter your password" class="myInput" name="Upassword">
+            <div class="row">
+                <input type="radio" name="Gender"> Male
+                <input type="radio" name="Gender"> Female
+            </div>
+            <textarea placeholder="enter your address" class="myInput" name="Uaddress"></textarea>
+
+            <br />
+            <button> Save </button>
+
+        </form>
+
+        <br/>
+        <table border="1"  >
+            <thead>
+                <td>Sr.</td>
+                <td>Name</td>
+                <td>Email</td>
+                <td>Password</td>
+                <td>Mobile Number</td>
+                <td>Gender</td>
+                <td>Address</td>
+                <td>Delete</td>
+            </thead>
+            <tbody id="tBody" >
+                <!-- <tr>
+                    <td>1.</td>
+                    <td>ws</td>
+                    <td>ws@gmail.com</td>
+                    <td>ws@123</td>
+                    <td>9874563210</td>
+                    <td>Male</td>
+                    <td>jodhpur</td>
+                    <td> <button>Delete</button> </td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+</body>
+<script>
+
+    // let allData = [];
+    // let nameError = document.getElementById("nameError")
+    // let numberError = document.getElementById("numberError")
+    // let namePattern = /^[A-Za-z]{7}$/
+    //  let mobilePattern = /^[0-9]{10}$/
+
+    let tBody=document.getElementById("tBody")
+
+    
+    let localData=JSON.parse(localStorage.getItem("classData"))
+     // Display Data
+      function displayData(){
+        tBody.innerHTML=""
+        localData.forEach((v,i)=>{
+
+            // console.log(v)
+            tBody.innerHTML+=`
+                <tr>
+                    <td> ${i+1} .</td>
+                    <td> ${v.name} </td>
+                    <td>${v.email}</td>
+                    <td>${v.password}</td>
+                    <td>${v.number}</td>
+                    <td>${v.gender}</td>
+                    <td>${v.address}</td>
+                    <td> <button onclick="singleDelete(${i})" >Delete</button> </td>
+                </tr>
+            `
+        })
+    }
+
+    displayData()
+
+    // get Data from user
+    let userInfo = (e) => {
+        e.preventDefault()
+        let userObj = {
+            name: e.target.Uname.value,
+            email: e.target.Uemail.value,
+            number: e.target.Unumber.value,
+            password: e.target.Upassword.value,
+            gender: e.target.Gender.value,
+            address: e.target.Uaddress.value
+
+        }
+        displayData()
+        // if(userObj.name=="" && userObj.email=="" && userObj.number=="" && userObj.password=="" && userObj.address=="" ){
+        //    return alert("Please fill up all inputs")
+        // }
+       
+        // if(namePattern.test(userObj.name)){
+        //      return alert("done")
+        // }
+        // else{
+        //      return nameError.innerHTML="please enter a valid formate"
+        // }
+
+        // if (!namePattern.test(userObj.name)){
+        //     return nameError.innerHTML = "please enter a valid formate"
+        // }
+
+        // if (!mobilePattern.test(userObj.number)){
+        //     return numberError.innerHTML = "please enter a valid Mobile Number And Formate"
+        // }
+
+        let oldData=JSON.parse(localStorage.getItem("classData")) || []
+        let allData=[...oldData,userObj]
+        localStorage.setItem("classData" ,JSON.stringify(allData))
+        
+        e.target.reset()
+        
+    }
+
+
+    // singleDelete
+
+    let singleDelete=(id)=>{
+        let filterData=localData.filter((v,i)=>{
+           if(i!=id){
+            return v
+           }
+        })
+
+        console.log(filterData)
+        localStorage.setItem("classData",JSON.stringify(filterData) )
+     
+
+        displayData()
+    }
+
+
+
+  
+   
+
+
+
+</script>
+
+</html>

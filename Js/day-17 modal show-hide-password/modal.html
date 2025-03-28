@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .modal {
+            width: 300px;
+            height: 300px;
+            background-color: red;
+            position: absolute;
+            top: -140%;
+            left: 40%;
+            transition: 1s;
+
+        }
+
+        span {
+            position: absolute;
+            right: 10px;
+            background-color: #ccc;
+            cursor: pointer;
+        }
+
+        .activeClass {
+            top: 30% !important;
+        }
+        .overlay{
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.6);
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            z-index: -99;
+        }
+        button{
+            padding: 20px 25px;
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <button> show modal </button>
+    <div class="modal">
+        <h2>Enquiry Form <span>X</span> </h2>
+    </div>
+
+    <div class="overlay"></div>
+</body>
+
+<script>
+
+    let btn = document.querySelector("button")
+    let overlay=document.querySelector(".overlay")
+    let modal = document.querySelector(".modal")
+    let span=document.querySelector("span")
+
+    btn.addEventListener("click", () => {
+        modal.classList.toggle("activeClass")
+    })
+    span.addEventListener("click",()=>{
+        modal.classList.remove("activeClass")
+    })
+
+    overlay.addEventListener("click",()=>{
+        modal.classList.remove("activeClass")
+    })
+
+
+</script>
+
+</html>
