@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            background-color: antiquewhite;
+        }
+        .main{
+            max-width: 1200px;
+            margin: auto;
+            border: 2px solid red;
+        }
+        .input{
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            width: 50%;
+        }
+        .outer{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .box{
+            width: 22%;
+            margin: 1%;
+            /* border: 1px solid; */
+            border-radius: 10px;
+            background-color: bisque;
+            padding: 5px;
+        }
+        .box img{
+            width: 100%;
+            border-radius: 10px;
+        }
+        .inner{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0px;
+            font-size: 20px;
+        }
+        ul{
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin-left: 200px;
+        }
+        ul li button{
+            border: none;
+            padding: 5px; 
+            background-color: blueviolet;
+            color: white;
+            font-size: 20px;
+        }
+        ul li{
+            margin: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>Search Movie</h1>
+        <input type="text" class="input" placeholder="Search Movie Name Here" >
+
+
+        <div class="outer">
+           
+        </div>
+
+        <div>
+            <ul>
+                <!-- <li> <Button>1</Button> </li> -->
+              
+            </ul>
+        </div>
+
+
+    </div>
+</body>
+
+<script>
+
+    let outer=document.querySelector(".outer")
+    let showCard= async (SearchName,id=1)=>{
+
+
+        console.log(SearchName,id)
+        let api;
+        if(SearchName==undefined || SearchName=="" ){
+            api=`https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=${id}`
+        }
+        else{
+            api=`https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=${SearchName}`
+        }
+
+        let Data= await fetch(api)
+        let jsonData= await Data.json()
+        let newData=jsonData.results
+
+        outer.innerHTML=""
+        let imageUrl="https://image.tmdb.org/t/p/w1280"
+        newData.forEach((data,index)=>{
+
+           
+            outer.innerHTML+=`
+                <div class="box"> 
+                <img src=${imageUrl+data.poster_path} >
+                <div class="inner">
+                    <div class="left"> ${data.original_title} </div>
+                    <div class="">2023-08-03</div>
+                </div>
+            </div> 
+            `
+        })
+        
+       
+        
+        
+    }
+
+    showCard()
+
+    let myInput=document.querySelector(".input")
+    myInput.addEventListener("keyup",(event)=>{
+        let SearchName=event.target.value
+        showCard(SearchName,"")
+    })
+
+    let ul=document.querySelector("ul")
+
+    for(let i=1 ; i<=10 ; i++){
+        ul.innerHTML+=`
+        <li> <Button onclick="btnWork(${i})" > ${i} </Button> </li>
+        `
+    }
+
+    let btnWork=(id)=>{
+        showCard("",id)
+    }
+
+
+</script>
+</html>
