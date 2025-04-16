@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+.rightSide{
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
