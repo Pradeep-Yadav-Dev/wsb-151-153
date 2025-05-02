@@ -8,6 +8,7 @@ import Header from './Comman/Header.jsx';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Gallery from './Gallery.jsx';
 import Contact from './Contact.jsx';
+import NotFound from './NotFound.jsx';
 
 
 createRoot(document.getElementById('root')).render(
@@ -19,7 +20,7 @@ createRoot(document.getElementById('root')).render(
         <Route path='/about' element={<About/>}/>
         <Route path='/gallery' element={<Gallery/>}/>
         <Route path='/contact' element={<Contact/>}/>
-        
+        <Route path="*" element={<NotFound/>}/>
 
 
       </Routes>

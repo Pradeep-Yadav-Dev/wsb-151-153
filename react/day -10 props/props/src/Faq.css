@@ -1,0 +1,32 @@
+.main{
+    max-width: 1200px;
+    margin: 20px auto;
+    
+    padding: 10px;
+}
+
+.main h1{
+    text-align: center;
+}
+
+.main .row{
+  
+    margin: 15px 0px;
+}
+
+.main h3{
+    padding: 10px;
+    background-color: bisque;
+    margin: 0px !important;
+    cursor: pointer;
+}
+.main p{
+    background-color: antiquewhite;
+    margin: 0px !important;
+    padding: 10px;
+    display: none;
+}
+
+.active{
+    display: block !important;
+}

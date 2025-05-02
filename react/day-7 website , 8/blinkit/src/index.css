@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+body{
+    background-color: #ccc;
+}
+
+
+.slick-prev:before, .slick-next:before {
+    font-family: 'slick';
+    font-size: 50px !important;
+    line-height: 1;
+    opacity: 9.75;
+    color: darkred;
+}
