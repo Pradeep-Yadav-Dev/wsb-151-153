@@ -1,11 +1,13 @@
 "use client"
 import Image from "next/image";
-import {app} from "./FireBaseConfig"
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { app } from "./FireBaseConfig"
+import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword } from "firebase/auth";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
 
-
+  let navigate=useRouter()
 
   const provider = new GoogleAuthProvider();
 
@@ -21,7 +23,7 @@ export default function Home() {
         const user = result.user;
         // IdP data available using getAdditionalUserInfo(result)
 
-        console.log(token , user)
+        // console.log(token , user)
         // ...
       }).catch((error) => {
         // Handle Errors here.
@@ -33,6 +35,38 @@ export default function Home() {
         const credential = GoogleAuthProvider.credentialFromError(error);
         // ...
       });
+  }
+
+
+  // loginWithEmail
+
+  let loginWithEmail = (e) => {
+    e.preventDefault()
+    let userObj = {
+      email: e.target.Uemail.value,
+      password: e.target.Upassword.value
+    }
+
+
+    const auth = getAuth(app);
+    signInWithEmailAndPassword(auth, userObj.email, userObj.password)
+      .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+
+        alert("logined")
+        navigate.push("/home")
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+
+        console.log(errorMessage , errorCode)
+      });
+
+
+
   }
   return (
     <>
@@ -52,7 +86,7 @@ export default function Home() {
             </p>
             <p className="flex flex-col items-center justify-center mt-10 text-center">
               <span>Don't have an account?</span>
-              <a href="#" className="underline">Get Started!</a>
+              <Link href={"/register"} className="underline"> Create Account </Link>
             </p>
             <p className="mt-6 text-sm text-center text-gray-300">
               Read our <a href="#" className="underline">terms</a> and <a href="#" className="underline">conditions</a>
@@ -60,13 +94,14 @@ export default function Home() {
           </div>
           <div className="p-5 bg-white md:flex-1">
             <h3 className="my-4 text-2xl font-semibold text-gray-700">Account Login</h3>
-            <form action="#" className="flex flex-col space-y-5">
+
+            <form onSubmit={loginWithEmail} className="flex flex-col space-y-5">
               <div className="flex flex-col space-y-1">
                 <label className="text-sm font-semibold text-gray-500">Email address</label>
                 <input
                   type="email"
                   id="email"
-
+                  name="Uemail"
                   className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
                 />
               </div>
@@ -78,17 +113,11 @@ export default function Home() {
                 <input
                   type="password"
                   id="password"
+                  name="Upassword"
                   className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
                 />
               </div>
-              <div className="flex items-center space-x-2">
-                <input
-                  type="checkbox"
-                  id="remember"
-                  className="w-4 h-4 transition duration-300 rounded focus:ring-2 focus:ring-offset-0 focus:outline-none focus:ring-blue-200"
-                />
-                <label className="text-sm font-semibold text-gray-500">Remember me</label>
-              </div>
+
               <div>
                 <button
                   type="submit"

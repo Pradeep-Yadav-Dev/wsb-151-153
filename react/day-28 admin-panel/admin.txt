@@ -1,0 +1,5 @@
+  1 . "/" -> login-page
+  2. "/dashboard" -> dashboard page
+ 3.  "/Colors/add"-> add color
+ 4. "/Colors/view" -> view color
+5. "/Colors/update" -> update color
