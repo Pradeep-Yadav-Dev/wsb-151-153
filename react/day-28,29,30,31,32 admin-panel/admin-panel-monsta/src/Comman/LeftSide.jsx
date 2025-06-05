@@ -15,7 +15,7 @@ export default function LeftSide() {
                     <h3 className='py-[10px] px-[5px] text-center bg-[#ccc] text-[20px] font-bold  ' > {item.title} </h3>
                     <div className='bg-[gray]'>
                         <ul>
-                            {item.subnMenu.map((v,i)=>{
+                            {item.subnMenu.map((v)=>{
                                 return(
                                  <Link to={`${v.link}`} >    <li > {v.subTitle} </li> </Link>
                                 )

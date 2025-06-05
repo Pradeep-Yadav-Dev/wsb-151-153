@@ -18,8 +18,8 @@ import { SiMaterialformkdocs } from "react-icons/si";
         title:"Color",
         // icon: <IoColorFill/>,
         subnMenu:[
-            {subTitle:"Add Color", link:"/color/view" },
-            { subTitle:"view color" , link:"/color/add"},
+            {subTitle:"Add Color", link:"/color/add" },
+            { subTitle:"view color" , link:"/color/view"},
             
             
         ]
